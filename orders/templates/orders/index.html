@@ -1,0 +1,12 @@
+<h1>Compras</h1>
+{% if order_list %}
+  <ul>
+    {% for order in order_list %}
+      <li>
+        <a href="/orders/{{ order.id }}/">{{ order.product.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>Não há compras cadastradas.</p>
+{% endif %}
