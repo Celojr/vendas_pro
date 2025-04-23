@@ -1,1 +1,9 @@
-<h1>ORDER DETAIL</h1>
+<h1>DETALHES DO PEDIDO</h1>
+<p><strong>Nome do produto:</strong> {{ order.product.name }}</p>
+<p><strong>Preço do produto:</strong> R${{ order.product.price }}</p>
+<p><strong>Quantidade:</strong> {{ order.quantity }}</p>
+<p><strong>Valor Total:</strong> R${{ order.total_price }}</p>
+<p><strong>Data do Pedido:</strong> {{ order.created_at }}</p>
+<p><strong>Status:</p>
+<p><strong>Método de Pagamento:</p>
+<p><strong>Código do Pedido:</p>
