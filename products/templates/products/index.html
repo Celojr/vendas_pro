@@ -1,4 +1,18 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'products/style.css' %}">
+
+<div class="navbar">
+  <nav>
+    <a href="/" class="home">HOME</a>
+    <a href="/products">PRODUTOS</a>
+    <a href="/orders">COMPRAS</a>
+  </nav>
+</div>
+
 <h1>Produtos</h1>
+
+<div class="container">
 {% if product_list %}
   <ul>
     {% for product in product_list %}
@@ -10,3 +24,4 @@
 {% else %}
   <p>Não há produtos cadastrados.</p>
 {% endif %}
+</div>

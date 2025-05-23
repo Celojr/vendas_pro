@@ -1,9 +1,30 @@
-<h1>DETALHES DO PEDIDO</h1>
-<p><strong>Nome do produto:</strong> {{ order.product.name }}</p>
-<p><strong>Preço do produto:</strong> R$ {{ order.product.price }}</p>
-<p><strong>Quantidade:</strong> {{ order.quantity }}</p>
-<p><strong>Valor Total:</strong> R$ {{ order.total_price }}</p>
-<p><strong>Data do Pedido:</strong> {{ order.created_at|date:"d/m/Y H:i" }}</p>
-<p><strong>Status:</p>
-<p><strong>Método de Pagamento:</p>
-<p><strong>Código do Pedido:</p>
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'orders/style.css' %}">
+
+<div class="navbar">
+  <nav>
+    <a href="/" class="home">HOME</a>
+    <a href="/products">PRODUTOS</a>
+    <a href="/orders">COMPRAS</a>
+  </nav>
+</div>
+
+<div class="container">
+  <h1>DETALHES DO PEDIDO #{{ order.id }}</h1>
+
+  <div class="card">
+    <div>
+      <p><strong>Nome do produto:</strong> {{ order.product.name }}</p>
+      <p><strong>Preço do produto:</strong> R${{ order.product.price }}</p>
+      <p><strong>Quantidade:</strong> {{ order.quantity }}</p>
+      <p><strong>Valor Total:</strong> R${{ order.total_price }}</p>
+      <p><strong>Data do Pedido:</strong> {{ order.created_at|date:"d/m/Y H:i" }}</p>
+    </div>
+    <div>
+      <p><strong>Status:</p>
+      <p><strong>Método de Pagamento:</p>
+      <p><strong>Código do Pedido:</p>
+    </div>
+  </div>
+</div>
