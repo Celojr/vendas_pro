@@ -13,15 +13,15 @@
 <h1>Produtos</h1>
 
 <div class="container">
-{% if product_list %}
-  <ul>
-    {% for product in product_list %}
-      <li>
-        <a href="/products/{{ product.id }}/">{{ product.name }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-{% else %}
-  <p>Não há produtos cadastrados.</p>
-{% endif %}
+  {% if product_list %}
+    <ul>
+      {% for product in product_list %}
+        <li>
+          <a href="/products/{{ product.id }}/">{{ product.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Não há produtos cadastrados.</p>
+  {% endif %}
 </div>
