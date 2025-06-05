@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu - Estoque e Vendas</title>
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Menu de Estoque e Vendas</h1>
+        <p>Bem-vindo!</p>
+
+        <ul>
+            <li><a href="http://127.0.0.1:8000/admin/products/product/">Cadastrar Produto</a></li>
+            <li><a href="http://127.0.0.1:8000/orders/">Nova Venda</a></li>
+            <li><a href="http://127.0.0.1:8000/admin/orders/order/">Histórico de Vendas</a></li>
+        </ul>
+    </div>
+</body>
+</html>

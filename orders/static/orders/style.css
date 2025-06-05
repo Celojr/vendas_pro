@@ -1,83 +1,56 @@
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-* {
-  margin: 0;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    interpolate-size: allow-keywords;
-  }
-}
 body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-
-img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
-}
-
-input, button, textarea, select {
-  font: inherit;
-}
-
-p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
-}
-
-p {
-  text-wrap: pretty;
-}
-h1, h2, h3, h4, h5, h6 {
-  text-wrap: balance;
-}
-
-#root, #__next {
-  isolation: isolate;
-}
-
-h1 {
-  margin: 10px 0;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #121212;
+    color: #f5f5f5;
 }
 
 .navbar {
-  background-color: #f1f1f1;
-
-  nav {
-    padding: 0 20px;
-    height: 96px;
+    background-color: #1e1e1e;
+    padding: 20px 40px;
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
 
-    .home {
-      flex: 1;
-    }
+.navbar a {
+    color: #a59df0;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
 
-    a {
-      font-size: 22px;
-      color: black;
-      text-decoration: none;
-    }
-  }
+.navbar a:hover {
+    color: #ffffff;
 }
 
 .container {
-  padding: 0 20px;
-  border: 1px solid #aaa;
-  background-color: #f1f1f1;
-  border-radius: 20px;
-  padding: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-.test {
-  color: blue;
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+.box {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.box p {
+    color: #ccc;
+    font-style: italic;
+    text-align: center;
 }

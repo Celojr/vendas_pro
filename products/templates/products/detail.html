@@ -1,5 +1,33 @@
-<h1>{{ product.name }}</h1>
-<label>Quantidade: </label>
-<p>{{ product.quantity }}</p>
-<label>Preço: </label>
-<p>{{ product.price }}</p>
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Compras</title>
+    <link rel="stylesheet" href="{% static 'orders/style.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left"><a href="{% url 'home' %}">HOME</a></div>
+        <div class="nav-right">
+            <a href="{% url 'products' %}">PRODUTOS</a>
+            <a href="{% url 'orders' %}">COMPRAS</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Compras</h1>
+        <div class="box">
+            {% if orders %}
+                <ul>
+                    {% for order in orders %}
+                        <li>{{ order.nome }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>Não há compras cadastradas.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
