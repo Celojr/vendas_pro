@@ -1,9 +1,9 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #111;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #fff;
+    background-color: #2e2d2d;
+    color: #f5f5f5;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,44 +12,49 @@ body {
 
 .container {
     background-color: #1c1c1c;
-    padding: 40px;
+    padding: 40px 60px;
     border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
     text-align: center;
-    width: 400px;
+    max-width: 400px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
 }
 
-h1 {
-    color: #00ccff;
-    margin-bottom: 20px;
+.container h1 {
+    color: #ffffff;
+    font-size: 22px;
+    margin-bottom: 8px;
 }
 
-p {
-    margin-bottom: 25px;
-    font-size: 16px;
-    color: #ccc;
+.container p {
+    font-size: 14px;
+    color: #bbbbbb;
+    margin-bottom: 30px;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+button {
+    background-color: #2e2e2e;
+    color: #f0f0f0;
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-size: 15px;
+    margin: 10px 0;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border 0.3s ease;
+    font-weight: 500;
 }
 
-li {
-    margin: 15px 0;
+button:hover {
+    background-color: #3b3b3b;
+    border-color: #5a5a5a;
+    color: #ffffff;
 }
 
-a {
-    text-decoration: none;
-    background-color: #00ccff;
-    color: #000;
-    padding: 12px 24px;
-    border-radius: 8px;
-    display: inline-block;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-a:hover {
-    background-color: #00aacc;
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 20px;
+    }
 }

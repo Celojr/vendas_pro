@@ -10,13 +10,13 @@
     <nav class="navbar">
         <div class="nav-left"><a href="{% url 'home' %}">HOME</a></div>
         <div class="nav-right">
-            <a href="{% url 'products' %}">PRODUTOS</a>
+            <a href="{% url 'index' %}">PRODUTOS</a>
             <a href="{% url 'orders' %}">COMPRAS</a>
         </div>
     </nav>
 
     <div class="container">
-        <h1>Compras</h1>
+        <h1>Produtos disponiveis</h1>
         <div class="box">
             {% if orders %}
                 <ul>
@@ -25,7 +25,10 @@
                     {% endfor %}
                 </ul>
             {% else %}
-                <p>Não há compras cadastradas.</p>
+                <p><strong>Id: {{product.id}}</strong></p>
+                <p><strong>Nome: {{product.name}}</strong></p>
+                <p><strong>quantidade: {{product.quantity}}</strong></p>
+                <p><strong>Data: {{ product.created_at}}</strong></p>
             {% endif %}
         </div>
     </div>

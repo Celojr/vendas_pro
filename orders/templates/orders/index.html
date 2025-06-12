@@ -17,7 +17,7 @@
     <ul>
       {% for order in order_list %}
         <li>
-          <a href="/orders/{{ order.id }}/">{{ order.product.name }}</a>
+          <button><strong><a href="/orders/{{ order.id }}/">{{ order.product.name }}</a></strong></button>
         </li>
       {% endfor %}
     </ul>

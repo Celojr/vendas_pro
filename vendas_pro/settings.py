@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-gt7lvzw%u-d#7f0(vw1tq*fj%_tx8lxbh58(h6)26+l)oi&0&b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["3.135.197.253", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["3.135.197.253", "localhost", "127.0.0.1", "https://f2ff-189-6-9-81.ngrok-free.app","*"]
 
 
 # Application definition
@@ -58,7 +59,7 @@ ROOT_URLCONF = 'vendas_pro.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,6 +123,8 @@ USE_L10N = True
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS = [BASE_DIR / "static"]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
@@ -133,4 +136,4 @@ LOGIN_URL = '/accounts/login/'
 
 LOGIN_REDIRECT_URL = 'home'
 
-LOGOUT_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = '/accounts/login/'
