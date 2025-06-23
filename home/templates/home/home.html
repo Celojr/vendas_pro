@@ -1,22 +1,29 @@
-{% load static %}
+{% load static %} {# Esta linha é crucial para que o Django encontre seus arquivos estáticos como o CSS #}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Menu - Estoque e Vendas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu de Estoque e Vendas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="{% static 'home/style.css' %}">
 </head>
 <body>
-    <div class="container">
-    <h1>Menu de Estoque e Vendas</h1>
-    <strong><p>Bem-vindo!</p></strong>
-    <button onclick="location.href='http://3.135.197.253:8000/admin/'">Painel Administrativo</button>
-    <button onclick="location.href='http://3.135.197.253:8000/admin/products/product/'">Cadastrar Produto</button>
-    <button onclick="location.href='http://3.135.197.253:8000/products/'">Produtos disponíveis</button>
-    <button onclick="location.href='http://3.135.197.253:8000/orders/'">Nova Venda</button>
-    <button onclick="location.href='http://3.135.197.253:8000/admin/orders/order/'">Histórico de Vendas</button>
 
-</div>
+    <div class="menu-container">
+        <h2>Menu de Estoque e Vendas</h2>
+        
+        <p>Bem-vindo!</p>
+        
+        <div class="menu-button-group">
+            <a href="http://127.0.0.1:8000/admin/" class="menu-button">Painel Administrativo</a>
+            <a href="http://127.0.0.1:8000/admin/products/product/" class="menu-button">Cadastrar Produto</a>
+            <a href="http://127.0.0.1:8000/products/" class="menu-button">Produtos disponíveis</a>
+            <a href="http://127.0.0.1:8000/orders/" class="menu-button">Nova Venda</a>
+            <a href="http://127.0.0.1:8000/admin/orders/order/" class="menu-button">Histórico de Vendas</a>
+        </div>
+    </div>
 
 </body>
 </html>

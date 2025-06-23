@@ -1,27 +1,43 @@
 {% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compras</title>
+    <link rel="stylesheet" href="{% static 'orders/style.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/products/">Produtos</a></li>
+                <li><a href="/orders/">Compras</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<link rel="stylesheet" href="{% static 'orders/style.css' %}">
+    <main>
+        <h1>Lista de Compras</h1>
 
-<div class="navbar">
-  <nav>
-    <a href="/" class="home">HOME</a>
-    <a href="/products">PRODUTOS</a>
-    <a href="/orders">COMPRAS</a>
-  </nav>
-</div>
-
-<h1>Compras</h1>
-
-<div class="container">
-  {% if order_list %}
-    <ul>
-      {% for order in order_list %}
-        <li>
-          <button><strong><a href="/orders/{{ order.id }}/">{{ order.product.name }}</a></strong></button>
-        </li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p>Não há compras cadastradas.</p>
-  {% endif %}
-</div>
+        <div class="order-list">
+            {% for order in orders %}
+                <div class="order-card">
+                    <h2>Pedido #{{ order.id }}</h2>
+                    <p>Produto: {{order}} </p>
+                    <p>Data: {{order.created_at}} </p>
+                    <ul>
+                        {% for order in order_list %}
+                            <li>{{ product.name }}</li>
+                        {% endfor %}
+                    </ul>
+                    <a href="{% url 'detail' order.id %}" class="details-button">Ver Detalhes</a>
+                </div>
+            {% empty %}
+                <p>Nenhuma compra realizada ainda.</p>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>

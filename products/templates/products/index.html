@@ -1,27 +1,38 @@
 {% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <link rel="stylesheet" href="{% static 'products/style.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/products/">Produtos</a></li>
+                <li><a href="/orders/">Compras</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<link rel="stylesheet" href="{% static 'products/style.css' %}">
-
-<div class="navbar">
-  <nav>
-    <a href="/" class="home">HOME</a>
-    <a href="/products">PRODUTOS</a>
-    <a href="/orders">COMPRAS</a>
-  </nav>
-</div>
-
-<h1>Produtos</h1>
-
-<div class="container">
-  {% if product_list %}
-    <ul>
-      {% for product in product_list %}
-        <li>
-          <button><strong><a href="/products/{{ product.id }}/">{{ product.name }}</a></strong></button>
-        </li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p>Não há produtos cadastrados.</p>
-  {% endif %}
-</div>
+    <main>
+        <h1>Lista de Produtos</h1>
+        <div class="product-list">
+            {% for product in product_list %}
+                <div class="product-card">
+                    <h2>{{ product.name }}</h2>
+                    <p>Id: {{product.id}} </p>
+                    <p>Preço: R$ {{ product.price }} </p>
+                    <p>Quantidade: {{ product.quantity }} </p>
+                    <p>Data: {{ product.created_at}} </p>
+                </div>
+            {% empty %}
+                <p>Nenhum produto cadastrado.</p>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>

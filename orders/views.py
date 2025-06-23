@@ -2,8 +2,8 @@ from django.shortcuts import render
 from .models import Order
 
 def index(request):
-  order_list = Order.objects.all()
-  context = {"order_list": order_list}
+  orders = Order.objects.all()
+  context = {"orders": orders}
   return render(request, "orders/index.html", context)
 
 def detail(request, order_id):

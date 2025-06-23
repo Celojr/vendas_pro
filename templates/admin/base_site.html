@@ -1,18 +1,20 @@
 {% extends "admin/base.html" %}
-{% load i18n %}
+{% load static %}
 
-{% block title %}Menu de Administração{% endblock %}
-
-{% block branding %}
-<h1 id="site-name"><a href="{% url 'admin:index' %}">Menu de Administração</a></h1>
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom_admin.css' %}">
 {% endblock %}
 
-{% block usertools %}
-  <div id="user-tools">
-    <a href="http://3.135.197.253:8000/">Menu inicial</a> /
-    <a href="http://3.135.197.253:8000/products/">Lista de produtos</a> /
-    <a href="http://3.135.197.253:8000/orders/">Vendas</a> /
-    <a href="{% url 'admin:password_change' %}">{% translate 'Alterar senha' %}</a> /
-    <!-- <a href="http://3.135.197.253:8000/admin/login/?next=/admin/">Encerrar sessão</a> -->
-  </div>
+{% block title %}Administração do Site{% endblock %}
+
+{% block branding %}
+    <h1 id="site-name"><a href="{% url 'admin:index' %}">Painel de Administração</a></h1>
+{% endblock %}
+
+{% block nav-global %}
+    <div id="custom-nav">
+        <a href="http://127.0.0.1:8000/">Início</a> |
+        <a href="http://127.0.0.1:8000/products/">Lista de Produtos</a> |
+        <a href="http://127.0.0.1:8000/orders/">Vendas</a>
+    </div>
 {% endblock %}

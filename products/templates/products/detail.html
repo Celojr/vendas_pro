@@ -1,36 +1,63 @@
-{% load static %}
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Compras</title>
-    <link rel="stylesheet" href="{% static 'orders/style.css' %}">
+  <meta charset="UTF-8">
+  <title>Detalhes do Produto</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    header {
+      margin-bottom: 20px;
+    }
+    nav a {
+      margin-right: 15px;
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .product-details {
+      border: 1px solid #ddd;
+      padding: 20px;
+      max-width: 400px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+    }
+    .product-details h2 {
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+    .product-details div {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    .product-details label {
+      font-weight: bold;
+      margin-right: 5px;
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-left"><a href="{% url 'home' %}">HOME</a></div>
-        <div class="nav-right">
-            <a href="{% url 'index' %}">PRODUTOS</a>
-            <a href="{% url 'orders' %}">COMPRAS</a>
-        </div>
+  <header>
+    <nav>
+      <a href="/">HOME</a>
+      <a href="/products/">PRODUTOS</a>
+      <a href="/orders/">COMPRAS</a>
     </nav>
+  </header>
 
-    <div class="container">
-        <h1>Produtos disponiveis</h1>
-        <div class="box">
-            {% if orders %}
-                <ul>
-                    {% for order in orders %}
-                        <li>{{ order.nome }}</li>
-                    {% endfor %}
-                </ul>
-            {% else %}
-                <p><strong>Id: {{product.id}}</strong></p>
-                <p><strong>Nome: {{product.name}}</strong></p>
-                <p><strong>quantidade: {{product.quantity}}</strong></p>
-                <p><strong>Data: {{ product.created_at}}</strong></p>
-            {% endif %}
-        </div>
-    </div>
+  <section class="product-details">
+    <h2>Detalhes do Produto</h2>
+
+    <div><label>ID:</label> {{ product.id }}</div>
+    <div><label>Nome:</label> {{ product.name }}</div>
+    <div><label>Descrição:</label> {{ product.description }}</div>
+    <div><label>Preço:</label> R$ {{ product.price }}</div>
+    <div><label>Quantidade em Estoque:</label> {{ product.quantity }}</div>
+  </section>
 </body>
 </html>
