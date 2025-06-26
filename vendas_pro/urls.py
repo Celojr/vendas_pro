@@ -8,7 +8,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('products/', include('products.urls')),
     path('orders/', include('orders.urls')),
-    path('accounts/', include('accounts.urls')),
     path('', include('home.urls')),
     path('admin/logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('cadastro-admin/', include('cadastro_admin.urls')),
+    path('usuario/', include('usuario.urls')),
+    path('login/', include('login.urls')),
 ]

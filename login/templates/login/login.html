@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login</title>
+  <style>
+    body {
+      background: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+    .login-container {
+      width: 360px;
+      padding: 30px 40px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+      background: #f9f9f9;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 28px;
+      color: #333;
+      font-weight: 700;
+      font-size: 24px;
+    }
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+      color: #555;
+      font-size: 14px;
+    }
+    input[type="text"],
+    input[type="password"] {
+      width: 94%;
+      padding: 12px 10px;
+      margin-bottom: 22px;
+      border: 1px solid #bbb;
+      border-radius: 5px;
+      font-size: 15px;
+      transition: border-color 0.3s ease;
+    }
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      border-color: #0073e6;
+      outline: none;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #0066cc;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-weight: 700;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background: #0052a3;
+    }
+    .errorlist {
+      color: #d93025;
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+    .register-link {
+      text-align: center;
+      margin-top: 12px;
+      font-size: 13px;
+      color: #555;
+    }
+    .register-link a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    .register-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form method="post">
+      {% csrf_token %}
+
+      {% if form.errors %}
+      <ul class="errorlist">
+        {% for field in form %}
+          {% for error in field.errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+          <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+      <label for="id_username">Usuário</label>
+      <input type="text" name="username" id="id_username" required autofocus />
+
+      <label for="id_password">Senha</label>
+      <input type="password" name="password" id="id_password" required />
+
+      <button type="submit">Entrar</button>
+    </form>
+    <p class="register-link">
+      Não tem conta? <a href="http://127.0.0.1:8000/usuario/register/">Cadastre-se aqui</a>
+    </p>
+    <p class="register-link">
+      Não tem conta admin? <a href="http://127.0.0.1:8000/cadastro-admin/create-superuser/">Cadastre-se como admin aqui</a>
+    </p>
+  </div>
+</body>
+</html>
