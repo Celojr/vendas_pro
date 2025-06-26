@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '^akmcqz#()j2&q^xtwac*j%2keleu%5ovy0-%um(5ra^tm8+8b')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '123456789')
 
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -143,3 +144,9 @@ LOGIN_REDIRECT_URL = 'home'  # ou para onde quer redirecionar após login
 LOGOUT_REDIRECT_URL = 'login'
 
 CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000']
+
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
