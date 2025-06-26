@@ -23,10 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-gt7lvzw%u-d#7f0(vw1tq*fj%_tx8lxbh58(h6)26+l)oi&0&b'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = ["3.135.197.253", "localhost", "127.0.0.1", "https://f2ff-189-6-9-81.ngrok-free.app","*"]
+ALLOWED_HOSTS = ["3.135.197.253", "localhost", "127.0.0.1", "https://f2ff-189-6-9-81.ngrok-free.app","*", '.onrender.com']
 
 
 # Application definition
