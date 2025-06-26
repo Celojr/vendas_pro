@@ -1,0 +1,29 @@
+/* Título do painel */
+#site-name a {
+    color: #000000 !important;
+}
+
+/* Links de boas-vindas e ações do admin */
+#user-tools,
+#user-tools a,
+#user-tools a:visited {
+    color: #000000 !important;
+}
+
+/* Menu personalizado */
+#custom-nav,
+#custom-nav a,
+#custom-nav a:visited {
+    color: #000000 !important;
+}
+
+/* Sub-barra de navegação "Início > Administração do Site" */
+.breadcrumbs,
+.breadcrumbs a {
+    color: #000000 !important;
+}
+
+/* Força qualquer outro texto da header a ser preto */
+#header * {
+    color: #000000 !important;
+}

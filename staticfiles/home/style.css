@@ -1,0 +1,88 @@
+/* home/static/home/style.css */
+
+:root {
+    /* Variáveis CSS para facilitar a manutenção */
+    --primary-light: #f7f9fc; /* Fundo principal da página (cinza azulado muito claro) */
+    --secondary-light: #ffffff; /* Fundo do contêiner do menu e dos botões (branco puro) */
+    --text-dark: #2c3e50; /* Cor principal para títulos (azul escuro) */
+    --text-medium: #6c757d; /* Cor para parágrafos e textos secundários (cinza médio) */
+    --accent-blue: #007bff; /* Cor de destaque (azul vibrante) */
+    --accent-blue-hover: #0056b3; /* Cor de destaque para o estado hover (azul mais escuro) */
+    --shadow-light: rgba(0, 0, 0, 0.05); /* Sombra suave para os botões */
+    --shadow-medium: rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada para o contêiner */
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Fonte moderna e limpa (requer importação via Google Fonts no HTML) */
+    margin: 0; /* Remove margens padrão do corpo */
+    padding: 0; /* Remove preenchimento padrão do corpo */
+    background-color: var(--primary-light); /* Aplica o fundo principal claro */
+    display: flex; /* Usa Flexbox para centralizar o conteúdo na tela */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Garante que o corpo ocupe pelo menos 100% da altura da viewport */
+    color: var(--text-dark); /* Define a cor padrão do texto */
+    -webkit-font-smoothing: antialiased; /* Suavização de fonte para melhor legibilidade em WebKit (Chrome, Safari) */
+    -moz-osx-font-smoothing: grayscale; /* Suavização de fonte para melhor legibilidade em Mozilla (Firefox) */
+}
+
+.menu-container {
+    background-color: var(--secondary-light); /* Fundo branco para o contêiner do menu */
+    padding: 40px; /* Espaçamento interno generoso */
+    border-radius: 12px; /* Cantos arredondados para um visual suave */
+    box-shadow: 0 10px 25px var(--shadow-medium); /* Sombra elegante para destacar o contêiner */
+    text-align: center; /* Centraliza o texto (h2, p) dentro do contêiner */
+    width: 100%; /* Ocupa 100% da largura disponível */
+    max-width: 500px; /* Limita a largura máxima para manter o design limpo em telas maiores */
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura total */
+}
+
+h2 {
+    color: var(--text-dark); /* Cor do título */
+    margin-bottom: 12px; /* Espaçamento abaixo do título */
+    font-size: 2.2em; /* Tamanho da fonte do título */
+    font-weight: 700; /* Peso da fonte do título (mais negrito) */
+    letter-spacing: -0.5px; /* Ajuste sutil no espaçamento entre letras */
+}
+
+p {
+    color: var(--text-medium); /* Cor do parágrafo */
+    margin-bottom: 30px; /* Espaçamento abaixo do parágrafo */
+    font-size: 1.05em; /* Tamanho da fonte do parágrafo */
+    line-height: 1.5; /* Altura da linha para melhor legibilidade */
+}
+
+.menu-button-group {
+    display: flex; /* Usa Flexbox para organizar os botões */
+    flex-direction: column; /* Empilha os botões verticalmente */
+    gap: 15px; /* Espaçamento entre os botões */
+}
+
+.menu-button {
+    display: block; /* Garante que o link se comporte como um bloco para ocupar a largura total */
+    width: 85%; /* Ocupa 100% da largura do seu contêiner pai (.menu-button-group) */
+    padding: 16px 25px; /* Espaçamento interno dos botões (vertical e horizontal) */
+    border: 1px solid #e0e6ed; /* Borda sutil nos botões */
+    border-radius: 8px; /* Cantos arredondados nos botões */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    color: var(--text-dark); /* Cor do texto dos botões */
+    background-color: var(--secondary-light); /* Fundo branco dos botões */
+    transition: all 0.3s ease; /* Transição suave para todas as propriedades no hover */
+    font-size: 1.1em; /* Tamanho da fonte dos botões */
+    font-weight: 600; /* Peso da fonte dos botões */
+    text-align: center; /* Centraliza o texto dentro de cada botão */
+    box-shadow: 0 2px 5px var(--shadow-light); /* Sombra sutil nos botões */
+    margin-bottom: 0; /* Garante que não haja margem extra empurrando o último botão */
+
+    /* --- POSSÍVEIS AJUSTES FINOS PARA A CENTRALIZAÇÃO DO TEXTO NO BOTÃO (descomente e teste se necessário visualmente) --- */
+    /* text-indent: -2px; /* Move o texto 2px para a esquerda */
+    /* padding-left: 23px; /* Reduz o padding esquerdo em 2px para empurrar o texto */
+}
+
+.menu-button:hover {
+    background-color: var(--accent-blue); /* Fundo azul ao passar o mouse */
+    color: var(--secondary-light); /* Texto branco ao passar o mouse */
+    border-color: var(--accent-blue); /* Borda azul ao passar o mouse */
+    transform: translateY(-2px); /* Efeito sutil de elevação ao passar o mouse */
+    box-shadow: 0 4px 10px var(--shadow-medium); /* Sombra maior no hover */
+}
